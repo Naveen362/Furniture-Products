@@ -1,0 +1,16 @@
+import React from 'react'
+import { FormInput,SubmitBtn } from '../components'
+import {Form,Link} from "react-router-dom"
+const Login = () => {
+  return (
+    <section className='h-screen grid place-items-center'>
+     <Form method="post" className='card w-96 p-8 bg-base-100 shadow-lg flex flex-col gap-y-4'>
+        <h4 className=''>Login</h4>
+        <FormInput type="email" name="identifier" defaultvalue="test@test.com" label="email"></FormInput>
+        <FormInput label="password" name='password' type='password' defaultValue="secret"></FormInput>
+     </Form>
+    </section>
+  )
+}
+
+export default Login
