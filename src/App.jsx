@@ -4,6 +4,8 @@ import { RouterProvider,createBrowserRouter } from "react-router-dom"
 import { About,Cart,HomeLayout,Checkout,
   Error,LandingPage,Login,Order,Products,
   SingleProduct,Register } from "./pages"
+
+  
   const router=createBrowserRouter([
     {
       path:"/",
@@ -15,7 +17,7 @@ import { About,Cart,HomeLayout,Checkout,
           element:<LandingPage/>,
         },
         {
-          path:"product",
+          path:"products",
           element:<Products/>
         },
         {
@@ -36,7 +38,7 @@ import { About,Cart,HomeLayout,Checkout,
           element:<Checkout/>
         },
         {
-          path:"order",
+          path:"orders",
           element:<Order/>
         }
       ]
@@ -48,7 +50,7 @@ import { About,Cart,HomeLayout,Checkout,
       errorElement:<Error/>
     },
     {
-      path:"/regitser",
+      path:"/register",
       element:<Register/>,
       errorElement:<Error/>
     }
