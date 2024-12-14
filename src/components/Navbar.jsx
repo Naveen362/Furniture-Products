@@ -53,7 +53,7 @@ const Navbar = () => {
             <BsMoonFill className='swap-off h-6 w-6'/>
             </label> 
             <NavLink to='/cart' className='btn btn-ghost btn-circle btn-md'><div className='indicator'><BsCart3 className='h-6 w-6'/>
-            <span className='indicator-item badge badge-sm badge-primary'>6</span>
+            <span className='indicator-item badge badge-sm badge-primary'>99+</span>
             </div></NavLink>
            </div>
 

@@ -19,7 +19,7 @@ const Register = () => {
 
 </div>
 <p className='text-center mt-2'>Already a member ?<Link to='/login'
- className='ml-2 link link-hover link-primary capitlize' >Login</Link></p>
+ className='ml-2 link link-hover link-primary capitalize' >Login</Link></p>
 </Form>
 
     </section>
