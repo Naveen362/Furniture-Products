@@ -5,9 +5,9 @@ import { Link, useLoaderData } from 'react-router-dom'
 import { formPrice } from '../utils'
 
 const ProductsGrid = () => {
-   const {products}= useLoaderData()
+   const {products}= useLoaderData();
   return (
-    <div className='pt-14 grid gap-4 md:gird-cols-2 lg:grid-cols-3'>
+    <div className='pt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3'>
       {products.map((product)=>{
         const {title,image,price}=product.attributes;
         const IndianAmount=price;

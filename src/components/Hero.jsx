@@ -21,7 +21,7 @@ const Hero = () => {
           <div className='lg:carousel carousel-center hidden h-[28rem] p-4 space-x-4 bg-neutral rounded-box '>
             {carouselImage.map((image,index)=>{
              return (
-                <div key={image} className='carousel-item'>
+                <div key={index} className='carousel-item'>
                     <img src={image} alt='Corousel' className='rounded-box h-full w-80 object-cover'/>
                     </div>
              )

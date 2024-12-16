@@ -1,6 +1,7 @@
 import React from 'react'
 import { customFetch } from '../utils'
-import ProductList from '../components/ProductList';
+
+import {ProductsContainer, Filter } from '../components';
 
 
 
@@ -14,7 +15,12 @@ export const loader=async ({request})=>{
 }
 const Products = () => {
   return (
-    <div><ProductList/></div>
+    <div>
+      <Filter/>
+      {/* <ProductList/>
+      <ProductsGrid/> */}
+      <ProductsContainer/>
+      </div>
   )
 }
 
