@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { customFetch, formPrice } from '../utils'
 import { Link, useLoaderData } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../features/cart/cartSlice';
 
 
 
@@ -13,6 +15,7 @@ export const loader =async({params})=>{
 }
 const SingleProduct = () => {
   const {product}=useLoaderData();
+  const dispatch=useDispatch()
   const {image,title,price,description,colors,company }=product.attributes;
   const IndianAmount=formPrice(price);
   const [ProductColor,setProductColor]=useState(colors[0]);
@@ -21,6 +24,15 @@ const SingleProduct = () => {
 
   const handleQuantity=(e)=>{
     setQuantity(parseInt(e.target.value))
+  }
+  
+  const cartProduct={
+    cartID:product.id + ProductColor,
+     productID:product.id,image,title,price,quantity,ProductColor,company
+  }
+  console.log(cartProduct)
+  const addToCart=()=>{
+       dispatch(addItem({product:cartProduct}))
   }
   return (
    <section>
@@ -69,7 +81,7 @@ const SingleProduct = () => {
         </div>
 
         <div className='mt-10'>
-          <button className='btn btn-secondary btn-md' onClick={()=>console.log("x")}>Add to Bag</button>
+          <button className='btn btn-secondary btn-md' onClick={addToCart}>Add to Bag</button>
         </div>
     </div>
 

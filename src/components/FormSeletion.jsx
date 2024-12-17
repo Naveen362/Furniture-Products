@@ -7,7 +7,7 @@ const FormSeletion = ({name,label,list,size,defaultValue}) => {
             <span className='label-text capitalize'>{label}</span>
 
         </label>
-        <select name={name} className={`selet select-bordered ${size}`}
+        <select name={name} className={`select select-bordered ${size}`}
         defaultValue={defaultValue}
         id={name}
     >
