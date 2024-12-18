@@ -8,7 +8,7 @@ import { ErrorElement } from "./components";
 import { loader as LandingLoader } from "./pages/LandingPage";
 import {loader as SingleProductLoader} from "./pages/SingleProduct";
 import {loader as ProductsLoader} from "./pages/Products"
-
+import {action as registerAction} from "./pages/Register"
   
   const router=createBrowserRouter([
     {
@@ -62,7 +62,8 @@ import {loader as ProductsLoader} from "./pages/Products"
     {
       path:"/register",
       element:<Register/>,
-      errorElement:<Error/>
+      errorElement:<Error/>,
+      action:registerAction,
     }
   ]);
 export default function App() {

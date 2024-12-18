@@ -26,16 +26,44 @@ const cartSlice=createSlice({
             }
             state.numberItemsInCart+=product.quantity;
             state.cartTotal+=product.price *product.quantity;
-            state.tax=0.1* state.cartTotal;
-            state.orderTotal=state.cartTotal+state.shipping+state.tax;
-            localStorage.setItem("cart",JSON.stringify(state));
+           cartSlice.caseReducers.calculateTotals(state)
             toast.success("Item Added To Cart")
 
             console.log(action.payload)
         },
-        clearCart:(state)=>{},
-        removeItem:(state,action)=>{},
-        editItem:(state,action)=>{}
+        clearCart:(state)=>{
+            localStorage.setItem("cart",JSON.stringify(defaultState));
+            return defaultState;
+        },
+        removeItem:(state,action)=>{
+            const {cartID}=action.payload;
+            const product=state.cartItem.find((item)=>item.cartID===cartID);
+
+
+            state.cartItem=state.cartItem.filter((item)=>item.cartID !==cartID);
+            state.numberItemsInCart-=product.quantity;
+            state.cartTotal-=product.price*product.quantity;
+            // state.caseReducers.calculateTotals(state);
+            cartSlice.caseReducers.calculateTotals(state);
+            toast.error("Item removed From Cart");
+        },
+        editItem:(state,action)=>{
+            const {cartID,quantity}=action.payload;
+            const item=state.cartItem.find((item)=>item.cartID===cartID);
+            state.numberItemsInCart+=quantity-item.quantity;
+            state.cartTotal+=item.price*(quantity-item.quantity);
+            item.quantity=quantity;
+            cartSlice.caseReducers.calculateTotals(state);
+            toast.success("Cart Updated");
+
+
+        }
+        ,
+        calculateTotals:(state)=>{
+            state.tax=0.1* state.cartTotal;
+            state.orderTotal=state.cartTotal+state.shipping+state.tax;
+            localStorage.setItem("cart",JSON.stringify(state));
+        }
     }
 
 });
