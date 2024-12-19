@@ -8,7 +8,14 @@ import { ErrorElement } from "./components";
 import { loader as LandingLoader } from "./pages/LandingPage";
 import {loader as SingleProductLoader} from "./pages/SingleProduct";
 import {loader as ProductsLoader} from "./pages/Products"
-import {action as registerAction} from "./pages/Register"
+import {loader as CheckoutLoader} from "./pages/Checkout"
+import {loader as ordersLoader} from "./pages/Order"
+
+import {action as registerAction} from "./pages/Register";
+import {action as loginAction} from "./pages/Login";
+import {action as checkoutAction} from "./components/CheckoutForm";
+
+import {store} from "./store"
   
   const router=createBrowserRouter([
     {
@@ -45,11 +52,14 @@ import {action as registerAction} from "./pages/Register"
         ,
         {
           path:"checkout",
-          element:<Checkout/>
+          element:<Checkout/>,
+          loader:CheckoutLoader(store),
+          action:checkoutAction(store),
         },
         {
           path:"orders",
-          element:<Order/>
+          element:<Order/>,
+          loader:ordersLoader(store),
         }
       ]
     }
@@ -57,7 +67,8 @@ import {action as registerAction} from "./pages/Register"
     {
       path:"/login",
       element:<Login/>,
-      errorElement:<Error/>
+      errorElement:<Error/>,
+      action: loginAction(store),
     },
     {
       path:"/register",

@@ -29,7 +29,7 @@ const Filter = () => {
         list={meta.companies} defaultValue={company}
         size="select-sm"
         // defaultValue={meta.categories}
-        />
+        />;
         <FormRange label="select price" name="price" size="range-sm" price={price} />
         <FormCheckbox label="free shipping" name='shipping' size="checkbox-sm" defaultValue={shipping} />
         <FormSeletion label="sort by" name='order'
@@ -41,6 +41,7 @@ const Filter = () => {
 <button className='btn btn-sm btn-info mt-5'>Search</button>
 <Link to="/products" className='btn btn-accent btn-sm'>Reset</Link>
     </Form>
+
   )
 }
 

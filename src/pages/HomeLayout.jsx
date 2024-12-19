@@ -3,14 +3,10 @@ import { Outlet, useNavigation } from 'react-router-dom'
 import { Header, Navbar } from '../components'
 import Loading from '../components/Loading'
 const HomeLayout = () => {
-  const navigation=useNavigation()
+  const navigation=useNavigation();
   const isPageLoading=navigation.state==="loading";
   return (<>
-    {/* <nav>
-        <span  className='text-4xl text-primary'> 
-                         Store
-        </span>
-    </nav> */}
+   
     <Header/>
     <Navbar/>
       {isPageLoading?(<Loading/>):(
@@ -20,4 +16,4 @@ const HomeLayout = () => {
   )
 }
 
-export default HomeLayout
+export default HomeLayout;

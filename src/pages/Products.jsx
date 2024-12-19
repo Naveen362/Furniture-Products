@@ -20,8 +20,6 @@ const Products = () => {
   return (
     <div>
       <Filter/>
-      {/* <ProductList/>
-      <ProductsGrid/> */}
       <ProductsContainer/>
       <PaginationContainer/>
       </div>

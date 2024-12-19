@@ -7,7 +7,8 @@ import { clearCart } from '../features/cart/cartSlice';
 const Header = () => {
   const navigate=useNavigate();
   const dispatch=useDispatch();
-  const user=useSelector((state)=>state.userState.user)
+  const user=useSelector((state)=>state.userState.user);
+  console.log(user);
   const handleLogout=()=>{
       navigate("/");
       dispatch(logOut());
@@ -17,7 +18,7 @@ const Header = () => {
    <header className='bg-neutral py-2 text-neutral-content'>
     <div className='align-element flex justify-center sm:justify-end'>
          {user ?(<div className='flex gap-x-2 sm:gap-x-8 items-center'>
-             <p className='text-xs sm:text-sm'>Hello, {user.userName}</p>
+             <p className='text-xs sm:text-sm'>Hello, {user.username}</p>
              <button className='btn btn-xs btn-outline btn-primary ' onClick={handleLogout}>logout</button>
          </div>):
         <div className='flex gap-x-6 justify-center items-center'>
