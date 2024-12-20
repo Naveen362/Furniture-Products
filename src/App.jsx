@@ -29,6 +29,7 @@ import {store} from "./store"
           errorElement:<ErrorElement/>,
           loader:LandingLoader,
         },
+        
         {
           path:"products",
           element:<Products/>,

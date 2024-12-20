@@ -12,8 +12,16 @@ const Hero = () => {
             <h1 className='max-w-2xl text-4xl font-bold tracking-tight sm:text-6xl'>
                 This is a store where you can shop anything</h1>
                 <p className='mt-8 max-w-xl text-lg leading'>
-                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque reprehenderit, magnam omnis praesentium pariatur laboriosam voluptas dolor aliquam, labore facere possimus dignissimos! Dolor reiciendis labore itaque accusamus porro, consequuntur ipsam!   
+                Turn your house into a home with furniture that speaks your style
                 </p>
+                <ul className="list-disc list-inside space-y-3">
+          <li>Customizable Designs: Tailor furniture to your needs and style.</li>
+          <li>Affordable Luxury: Quality furniture at unbeatable prices.</li>
+          <li>
+            Seamless Shopping: Easy online ordering with fast delivery and
+            assembly services.
+          </li>
+        </ul>
                 <div className='mt-10'>
                     <Link to='products' className='btn btn-primary'>Our Product</Link>
                 </div>
