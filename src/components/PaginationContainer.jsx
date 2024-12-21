@@ -28,8 +28,8 @@ const PaginationContainer = () => {
                 handlePageChange(prevPage)
             }}
             > Prev</button>
-            {pages.map((pageNumber)=>{
-                return <button onClick={()=>{handlePageChange(pageNumber)}}
+            {pages.map((pageNumber,index)=>{
+                return <button key={index} onClick={()=>{handlePageChange(pageNumber)}}
                 className={`btn btn-xs sm:btn-md border-none join-item ${pageNumber===page?"bg-base-300 border-base-300":""}`}>
                     {pageNumber}
                     </button>
