@@ -29,7 +29,7 @@ const Filter = () => {
         list={meta.companies} defaultValue={company}
         size="select-sm"
         // defaultValue={meta.categories}
-        />;
+        />
         <FormRange label="select price" name="price" size="range-sm" price={price} />
         <FormCheckbox label="free shipping" name='shipping' size="checkbox-sm" defaultValue={shipping} />
         <FormSeletion label="sort by" name='order'

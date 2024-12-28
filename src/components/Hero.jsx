@@ -23,7 +23,7 @@ const Hero = () => {
           </li>
         </ul>
                 <div className='mt-10'>
-                    <Link to='products' className='btn btn-primary'>Our Product</Link>
+                    <Link to='products' className='btn btn-primary'>Our Products</Link>
                 </div>
           </div>
           <div className='lg:carousel carousel-center hidden h-[28rem] p-4 space-x-4 bg-neutral rounded-box '>

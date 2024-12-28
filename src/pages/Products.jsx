@@ -20,6 +20,7 @@ const Products = () => {
   return (
     <div>
       <Filter/>
+      
       <ProductsContainer/>
       <PaginationContainer/>
       </div>
