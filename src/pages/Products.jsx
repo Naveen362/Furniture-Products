@@ -23,7 +23,7 @@ const Products = () => {
       
       <ProductsContainer/>
       <PaginationContainer/>
-      </div>
+    </div>
   )
 }
 

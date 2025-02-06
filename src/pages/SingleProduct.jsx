@@ -8,6 +8,7 @@ import { addItem } from '../features/cart/cartSlice';
 
 export const loader =async({params})=>{
 
+  
   const response=await customFetch(`products/${params.id}`);
   console.log(response)
   return {product:response.data.data};

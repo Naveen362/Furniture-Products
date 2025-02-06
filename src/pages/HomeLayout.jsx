@@ -5,13 +5,15 @@ import Loading from '../components/Loading'
 const HomeLayout = () => {
   const navigation=useNavigation();
   const isPageLoading=navigation.state==="loading";
-  return (<>
-   
+  return (
+  <>
+    
     <Header/>
     <Navbar/>
       {isPageLoading?(<Loading/>):(
      <section className='align-element py-20'>
     <Outlet/></section>)}
+    
     </>
   )
 }

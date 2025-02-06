@@ -25,11 +25,12 @@ import {store} from "./store"
       children:[
         {
           index:true,
+
           element:<LandingPage/>,
           errorElement:<ErrorElement/>,
           loader:LandingLoader,
         },
-        
+          
         {
           path:"products",
           element:<Products/>,
